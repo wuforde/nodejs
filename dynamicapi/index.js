@@ -11,7 +11,7 @@ app.get('/*',(request,response) => {
     
     let o = require('./' + objname+'.js');
 
-    console.log(o.Run());
+    o.Run();
     response.send(o.whoami());
 
 })
