@@ -1,6 +1,9 @@
 const server = require("express");
 const fs = require("fs");
+const querystring = require('querystring');
 const app = server();
+app.use(server.urlencoded());
+app.use(server.json());
 
 app.get("/", (request, response) => response.send("good day"));
 
@@ -10,6 +13,12 @@ app.get("/test/test", (request, response) => {
 
     response.send(request.query);
 })
+
+app.post("/objectTest", (request, response) =>
+{
+    console.log(request.body);
+}
+)
 
 app.get("/specialWait", (request,response) => waiter(request,response,writeResponse));
 
