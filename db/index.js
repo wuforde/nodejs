@@ -9,6 +9,7 @@ con.connect(function(err) {
         throw err;
     }
     else
+    {
         console.log("Connected!");
     
     con.query('select * from wudb.users', function(err, result){
@@ -19,5 +20,7 @@ con.connect(function(err) {
        else
             console.log(result);     
 con.end();
+    
     });
+}
   });
